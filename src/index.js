@@ -10,6 +10,7 @@ const initialState = {
   count:0,
   boxcount:[],
   colorAll:"pink",
+  colorEach:[]
 }
 
 //reducer always needs two arguments, state THEN action
@@ -27,6 +28,9 @@ function reducer(state=initialState, action){
   }
   if (action.type ==='change-all-color'){
     state.colorAll = action.payload
+  }
+  if (action.type ==='change-each-color'){
+    state.colorEach[action.payload.index] = action.payload.color
   }
   if (action.type === 'reset'){
     state=initialState
