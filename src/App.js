@@ -26,7 +26,7 @@ function App() {
     <input type="text" onChange={event => {dispatch({type:"change-all-color", payload:event.target.value})}} />
 
     <div>{boxcount.map((box, index) => {
-       return (<Box key={index}  />)
+       return (<Box id={index}  />)
     })}
     </div>
 
