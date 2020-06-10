@@ -9,8 +9,8 @@ export default function Box(props) {
   let allColor = state.colorAll;
 
   let [color, setColor] = useState(null);
-  console.log("this is all color", allColor)
-  console.log("this is single color",singleColor)
+  console.log("this is all color", allColor);
+  console.log("this is single color", singleColor);
   // useEffect(() => {
   //   if (state.colorAll !== null) {
   //     setColor(state.colorAll);

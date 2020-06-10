@@ -36,7 +36,7 @@ function App() {
 
       <div className="box-color">
         {state.boxcount.map((box, index) => {
-          return <Box id={index} />
+          return <Box id={index} />;
         })}
       </div>
     </div>

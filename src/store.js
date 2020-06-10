@@ -12,7 +12,7 @@ const initialState = {
 function reducer(state = initialState, action) {
   if (action.type === "increment") {
     state.count++;
-    state.boxcount.push('');//you always need to push something, even if it's empty string or empty string ''
+    state.boxcount.push(""); //you always need to push something, even if it's null or empty string ''
   }
   if (action.type === "decrement") {
     state.count--;
@@ -39,4 +39,4 @@ function reducer(state = initialState, action) {
 //store is an object
 const store = createStore(reducer);
 
-export default store
+export default store;
