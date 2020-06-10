@@ -4,10 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Box from "./components/Box";
 
 function App() {
-  let count = useSelector((state) => state.count);
-  let boxcount = useSelector((state) => state.boxcount);
-  let colorAll = useSelector((state) => state.colorAll);
-  let colorEach = useSelector((state) => state.colorEach);
+  let state = useSelector((state) => state);
   let dispatch = useDispatch();
 
   const increaseNum = () => {
@@ -17,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <h1>Smith's Colorful Boxes</h1>
-      <h2>{count}</h2>
+      <h2>{state.count}</h2>
       <button onClick={() => increaseNum()}>Increment</button>
       <button
         onClick={() =>
@@ -38,8 +35,8 @@ function App() {
       />
 
       <div className="box-color">
-        {boxcount.map((box, index) => {
-          return <Box id={index} />;
+        {state.boxcount.map((box, index) => {
+          return <Box id={index} />
         })}
       </div>
     </div>

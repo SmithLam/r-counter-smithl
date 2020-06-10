@@ -11,7 +11,7 @@ const initialState = {
   boxcount: [],
   colorAll: "pink",
   colorEach: "pink",
-  index: 0,
+  index: null,
 };
 
 //reducer always needs two arguments, state THEN action
