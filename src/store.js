@@ -12,7 +12,7 @@ const initialState = {
 function reducer(state = initialState, action) {
   if (action.type === "increment") {
     state.count++;
-    state.boxcount.push('');
+    state.boxcount.push('');//you always need to push something, even if it's empty string or empty string ''
   }
   if (action.type === "decrement") {
     state.count--;
