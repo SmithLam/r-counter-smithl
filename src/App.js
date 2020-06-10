@@ -18,14 +18,14 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Counter App</h1>
+      <h1>Smith's Colorful Boxes</h1>
       <h2>{count}</h2>
     <button onClick = {() => increaseNum()}>Increment</button>
     <button onClick = {() => dispatch({type:"decrement", payload:{num:2, message:"bitna is amazing"}})}>Decrement</button>
     <button onClick = {() => dispatch({type:"reset"}) }>Reset</button>
     <input type="text" onChange={event => {dispatch({type:"change-all-color", payload:event.target.value})}} />
 
-    <div>{boxcount.map((box, index) => {
+    <div className="box-color">{boxcount.map((box, index) => {
        return (<Box id={index}  />)
     })}
     </div>

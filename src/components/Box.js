@@ -60,7 +60,7 @@ export default function Box(props) {
 
     return (
         <div>
-        <div id="box" style={{ backgroundColor: color}} ><center><p>This box is amazing!</p>
+        <div id="box" style={{ backgroundColor: color}} ><center><p>This box is {props.id+1} and is {color}!</p>
        <p><input type="text" onChange={event => setColor(event.target.value)}/></p></center></div>
 
         </div>

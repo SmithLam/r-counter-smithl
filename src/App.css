@@ -1,6 +1,14 @@
 body{
   display: flex;
   justify-content: center;
+  text-align: center;
+}
+
+.box-color{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
 }
 
 #box{
