@@ -1,54 +1,54 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
-import {Provider} from 'react-redux';
-import {createStore} from 'redux'
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
 
 const initialState = {
-  count:0,
-  boxcount:[],
-  colorAll:"pink",
-  colorEach:"pink",
-  index:0,
-}
+  count: 0,
+  boxcount: [],
+  colorAll: "pink",
+  colorEach: "pink",
+  index: 0,
+};
 
 //reducer always needs two arguments, state THEN action
-function reducer(state=initialState, action){  
-  if (action.type === 'increment'){
-    state.count++
-    state.boxcount.push(1)
+function reducer(state = initialState, action) {
+  if (action.type === "increment") {
+    state.count++;
+    state.boxcount.push(1);
   }
-  if (action.type === 'decrement'){
-    state.count--
-    state.boxcount.splice(-1)
+  if (action.type === "decrement") {
+    state.count--;
+    state.boxcount.splice(-1);
   }
-  if (state.count <0){
-    state.count = 0
+  if (state.count < 0) {
+    state.count = 0;
   }
-  if (action.type ==='change-all-color'){
-    state.colorAll = action.payload
+  if (action.type === "change-all-color") {
+    state.colorAll = action.payload;
   }
-  if (action.type ==='change-each-color'){
-    state.colorEach = action.payload.color
-    state.index = action.payload.index
+  if (action.type === "change-each-color") {
+    state.colorEach = action.payload.color;
+    state.index = action.payload.index;
   }
-  if (action.type === 'reset'){
-    state=initialState
-    state.boxcount = []
+  if (action.type === "reset") {
+    state = initialState;
+    state.boxcount = [];
   }
-  return {...state} //grab everything inside initialState and make a new object and return
+  return { ...state }; //grab everything inside initialState and make a new object and return
 }
 
 //store is an object
-const store = createStore(reducer); 
+const store = createStore(reducer);
 
 ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change
